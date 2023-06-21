@@ -23,9 +23,7 @@ const Login = () => {
     console.log(formData);
       axios
         .post("https://reqres.in/api/login", formData)
-        .then((response) => {
-          // Tangani respons dari API
-          console.log(response.data);
+        .then((response) => {;
           localStorage.setItem('token', response.data.token)
           messageApi
           .open({
@@ -38,8 +36,6 @@ const Login = () => {
           .then(() => messageApi.destroy)    
         })
         .catch((error) => {
-          // Tangani kesalahan
-          console.error(error.response.data, "console error !!!!!!!!!!!!!!!")
           messageApi
           .open({
             type: 'loading',
@@ -97,14 +93,6 @@ const Login = () => {
                   >
                     Password
                   </label>
-                  {/* <div className="text-sm">
-                    <a
-                      href="#"
-                      className="font-semibold text-[#FFCE07] hover:text-yellow-500"
-                    >
-                      Forgot password?
-                    </a>
-                  </div> */}
                 </div>
                 <div className="mt-2">
                   <input

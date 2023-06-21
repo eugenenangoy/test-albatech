@@ -21,7 +21,7 @@ const PrivateRoute = () => {
 }
 const PrivateRoutes = (props) =>{
   const token = localStorage.getItem('token')
-  if(!token) return <Navigate to ='/login'/>
+  if(!token) return <Navigate to ='/login' replace/>
   return props.children
 }
 
